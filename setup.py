@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# This repo is modified for single-molecule studies, from original repo from 'http://github.com/hildensia/bayesian_changepoint_detection'. 
+# This repo is modified specificlly for single-molecule studies, adapted from original repo from 'http://github.com/hildensia/bayesian_changepoint_detection'. 
 
 from setuptools import setup
 import bayesian_changepoint_detection

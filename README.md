@@ -31,6 +31,10 @@ pip install .
 ![Noise level = 0.1](Docs/images/image_5.png)
 ![Noise level = 0.2](Docs/images/image_6.png)
 
+# Known limits
+1. Good at analyzing data points less than 1000; more data points will consume significantly longer time
+
+
 # Todo
 1. Develop a UI for non-coder use
 2. Improve the code logic for speedy analysis (currently, it takes up to half a minite for 1000 data points, but bigger data sets, it might takes several minites for analysis.)

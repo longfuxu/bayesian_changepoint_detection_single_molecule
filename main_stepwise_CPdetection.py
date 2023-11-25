@@ -13,12 +13,11 @@ import bayesian_changepoint_detection.offline_likelihoods as offline_ll
 from bayesian_changepoint_detection.x_index_averager import average_indices
 
 
-file_path = 'Test_Data/testdata_simulatedDiscreteSteps19.txt'
-
-# file_path = 'Test_Data/testdata_regular_steps.txt'
+file_path = 'Test_Data/testdata_stepwise_output_2.txt'
 try:
     # Load the data from the file
     x, data = np.loadtxt(file_path, delimiter=',',unpack=True)
+    # x, data = np.loadtxt(file_path, unpack=True)
 
     # Plotting the data
     plt.plot(x, data)
