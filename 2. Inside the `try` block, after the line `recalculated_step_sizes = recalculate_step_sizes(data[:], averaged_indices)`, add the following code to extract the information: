@@ -1,4 +1,0 @@
-# Extract the step locations, step sizes, and plateau lengths
-step_locations = x[averaged_indices]
-step_sizes = recalculated_step_sizes
-plateau_lengths = np.diff(averaged_indices)

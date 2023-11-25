@@ -1,4 +1,5 @@
 from __future__ import division
+import os
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -77,3 +78,18 @@ plt.xlabel('X-label')
 plt.ylabel('Simulated Data')
 plt.legend()
 plt.show()
+
+# calculate the data
+step_locations = np.concatenate([[x[0]], x[averaged_indices], [x[-1]]])
+step_sizes = recalculated_step_sizes
+plateau_lengths = np.diff(step_locations)
+
+# Saving the extracted information
+output_directory = 'Test_Outputdata'
+if not os.path.exists(output_directory):
+    os.makedirs(output_directory)
+
+# Save step locations, step-sizes, and plateau lengths to files
+np.savetxt(os.path.join(output_directory, f"{os.path.basename(file_path).split('.')[0]}_step_locations.txt"), step_locations)
+np.savetxt(os.path.join(output_directory, f"{os.path.basename(file_path).split('.')[0]}_step_sizes.txt"), step_sizes, fmt='%.5f')
+np.savetxt(os.path.join(output_directory, f"{os.path.basename(file_path).split('.')[0]}_plateau_lengths.txt"), plateau_lengths)

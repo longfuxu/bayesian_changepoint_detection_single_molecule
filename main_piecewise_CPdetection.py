@@ -1,4 +1,5 @@
 from __future__ import division
+import os
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -78,6 +79,9 @@ closeness_threshold = 50
 
 averaged_indices = average_indices(prob_threshold, closeness_threshold, Pcp)
 
+# Recalculate step sizes based on the optimal step locations
+recalculated_step_sizes = recalculate_step_sizes(data[:], averaged_indices)
+
 # Calculate the filtered_y_values,first_derivative_values,fitted_y_values and plot the data
 filtered_y_values = moving_window_filter(y_values, window_size)
 first_derivative_values = first_derivative(x_values, filtered_y_values, window_size)
@@ -86,3 +90,19 @@ fitted_y_values = reconstruct_fitted_data(x_values, filtered_y_values, averaged_
 plot_data(x_values, y_values, filtered_y_values, first_derivative_values, fitted_y_values)
 plt.show()
 
+# calculate the data
+cp_locations = np.concatenate([[x_values[0]], x_values[averaged_indices], [x_values[-1]]])
+step_sizes = recalculated_step_sizes
+plateau_lengths = np.diff(cp_locations)
+velocity = step_sizes/plateau_lengths[:-1]
+
+# Saving the extracted information
+output_directory = 'Test_Outputdata'
+if not os.path.exists(output_directory):
+    os.makedirs(output_directory)
+
+# Save step locations, step-sizes, and plateau lengths to files
+np.savetxt(os.path.join(output_directory, 'piecewise_cp_locations.txt'), cp_locations)
+np.savetxt(os.path.join(output_directory, 'piecewise_step_sizes.txt'), step_sizes, fmt='%.5f')
+np.savetxt(os.path.join(output_directory, 'piecewise_plateau_lengths.txt'), plateau_lengths)
+np.savetxt(os.path.join(output_directory, 'piecewise_velocity_lengths.txt'), velocity )
