@@ -7,6 +7,7 @@ This repository contains Python code for detecting changepoints in single molecu
 ```
 - main_piecewise_CPdetection.py: Main script for piecewise changepoint detection.
 - main_stepwise_CPdetection.py: Main script for stepwise changepoint detection.
+- Analysis_single_molecule_datasets.ipynb: Main notebook to analyze real single-molecule data in .tdms format. Please follow this notebook for your single-molecule data analysis
 - Test_Data/: Directory containing test datasets.
 - bayesian_changepoint_detection/: Package with modules for changepoint detection.
 - Examples/: Directory with example output data and notebooks.
@@ -90,3 +91,6 @@ Contributions to this project are welcome. Please fork the repository, make your
 
 ## Contact Information
 For any queries or assistance, please contact the repository maintainer at [longfu2.xu_at_gmail.com].
+
+## Citation
+Xu, L. (2023) Grab, manipulate and watch single DNA molecule replication. PhD-Thesis - Research and graduation internal. Available at: https://doi.org/10.5463/thesis.424.
