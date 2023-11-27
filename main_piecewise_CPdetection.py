@@ -40,6 +40,7 @@ filtered_y_values = moving_window_filter(y_values, window_size)
 first_derivative_values = first_derivative(x_values, y_values, window_size)
 # filtered_first_derivative = savgol_filter(first_derivative_values, window_length=5, polyorder=3)
 
+# In case the derivative is too small, you might risk detecting nothing, so we multiply a manifying factor.
 data = first_derivative_values
 
 plt.figure(figsize=(10,8))
