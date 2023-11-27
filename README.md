@@ -21,18 +21,25 @@ pip install .
 
 # Application on Step-wise Datasets
 ## please follow this step-by-step [notebook](Examples/example_stepwise_CPdetection.ipynb)
+### Simulated Step-wise Datasets
 ![Simulated Step-wise Datasets](Docs/images/image_1.png)
+### Fitted Step-wise Datasets
 ![Fitted Step-wise Datasets](Docs/images/image_2.png)
 
 # Application on Piece-wise Datasets
 ## please follow this step-by-step [notebook](Examples/example_piecewise_CPdetection.ipynb)
+### Noise level = 0.02
 ![Noise level = 0.02](Docs/images/image_3.png)
+### Noise level = 0.05
 ![Noise level = 0.05](Docs/images/image_4.png)
+### Noise level = 0.1
 ![Noise level = 0.1](Docs/images/image_5.png)
+### Noise level = 0.2
 ![Noise level = 0.2](Docs/images/image_6.png)
 
 # Known limits
-1. Good at analyzing data points less than 1000; more data points will consume significantly longer time
+1. Good at analyzing data points less than 1000; 
+2. More data points will consume significantly longer time
 
 
 # Todo
